@@ -14,10 +14,11 @@ def main():
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                print("Gracefully Quitting")
                 return
         screen.fill((0,0,0))
-        tack = clock.tick(60)
-        dt = tack / 1000
+        dt = clock.tick(60) / 1000
+        player.update(dt)
         player.draw(screen)
         pygame.display.flip()
 
